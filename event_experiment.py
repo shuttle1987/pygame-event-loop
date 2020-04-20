@@ -1,4 +1,4 @@
-
+"""Experimenting with updates from outside the pygame loop"""
 
 import threading
 
@@ -29,8 +29,8 @@ text_update_thread = threading.Thread(target=text_changer)
 text_update_thread.start()
 
 while True:
-    screen.fill(COLOR_WHITE)
     for event in pygame.event.get():
+        screen.fill(COLOR_WHITE)
         if event.type == pygame.QUIT:
             pygame.quit()
         elif event.type == pygame.KEYDOWN:
